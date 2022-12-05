@@ -1,0 +1,4 @@
+
+
+class Hands(Enum):
+    pass
