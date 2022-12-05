@@ -1,2 +1,2 @@
-# Python-Poker
-poker written in python ( ͡° ͜ʖ ͡ – ✧)
+# PyKEr
+Poker written in python ( ͡° ͜ʖ ͡ – ✧)
