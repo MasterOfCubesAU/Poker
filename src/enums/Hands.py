@@ -1,4 +1,5 @@
+import enum
 
 
-class Hands(Enum):
+class Hands(enum.Enum):
     pass
