@@ -1,6 +1,7 @@
 from ..enums.CardSuit import CardSuit
 from ..enums.CardValue import CardValue
 
+
 class Card:
     def __init__(self, value: str, suit: str) -> None:
         if value not in [v.name for v in CardValue]:
