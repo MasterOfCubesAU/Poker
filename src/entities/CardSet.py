@@ -8,24 +8,24 @@ from typing import List
 
 class CardSet:
     def __init__(self) -> None:
-        self.cards = []
+        self.cards: List[Card] = []
 
-    def showDeck(self):
+    def showDeck(self) -> List[str]:
         return [str(card) for card in self.cards]
 
-    def shuffle(self, seed=None):
+    def shuffle(self, seed: int | None = None) -> None:
         if seed is not None:
             random.seed(seed)
         random.shuffle(self.cards)
 
-    def draw(self, amount=1):
+    def draw(self, amount: int = 1) -> List[Card]:
         if amount > len(self.cards):
             raise CardSetException(
                 f"Not enough cards in the set to draw {amount} cards"
             )
         return [self.cards.pop() for _ in range(amount)]
 
-    def play(self, cards: List[Card]):
+    def play(self, cards: List[Card]) -> None:
         if len(cards) > len(self.cards):
             raise CardSetException(
                 f"Not enough cards in the set to play {len(cards)} cards"
@@ -38,11 +38,11 @@ class CardSet:
             else:
                 self.cards.remove(card)
 
-    def add(self, cards: List[Card]):
+    def add(self, cards: List[Card]) -> None:
         self.cards.extend(cards)
 
-    def __len__(self):
+    def __len__(self) -> int:
         return len(self.cards)
 
-    def __contains__(self, card):
+    def __contains__(self, card: Card) -> bool:
         return card in self.cards
