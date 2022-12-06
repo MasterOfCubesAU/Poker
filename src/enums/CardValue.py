@@ -1,5 +1,6 @@
 import enum
 
+
 class CardValue(enum.Enum):
     ACE = 1
     TWO = 2

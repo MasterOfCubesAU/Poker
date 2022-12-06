@@ -1,6 +1,7 @@
 from ..enums.CardSuit import CardSuit
 from ..enums.CardValue import CardValue
 
+
 class Card:
     def __init__(self, value: str, suit: str) -> None:
         if value not in [v.name for v in CardValue]:
@@ -14,4 +15,6 @@ class Card:
         return f"{self.value.name} {self.suite.name}"
 
     def __eq__(self, other: object) -> bool:
-        return self.value == other.value and self.suite == other.suite
+        if not isinstance(other, Card):
+            return NotImplemented
+        return bool(self.value == other.value and self.suite == other.suite)

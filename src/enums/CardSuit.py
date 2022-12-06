@@ -1,5 +1,6 @@
 import enum
 
+
 class CardSuit(enum.Enum):
     CLUBS = 1
     SPADES = 2
