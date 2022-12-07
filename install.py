@@ -1,5 +1,6 @@
 import os
 import argparse
+import shutil
 import sys
 
 VENV_PATH = ".POKER"
@@ -10,12 +11,12 @@ def getBinPath():
     if os.name == "posix":
         return rf"{VENV_PATH}/bin"
     else:
-        return f"{VENV_PATH}\Scripts"
+        return rf"{VENV_PATH}\Scripts"
 
 
 def main():
     if args.reinstall or args.clean:
-        os.remove(VENV_PATH)
+        shutil.rmtree(VENV_PATH)
         print(f"Removed {VENV_PATH}")
         if args.clean:
             return
