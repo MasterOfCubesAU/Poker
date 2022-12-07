@@ -1,11 +1,10 @@
 from .CardSet import CardSet
 from ..utils.ConfigHandler import ConfigHandler
 
-ConfigHandler.load("config.yaml")
-
 
 class Player:
     def __init__(self, name: str, hand: CardSet, balance: int) -> None:
+        ConfigHandler.load("config.yaml")
         self.name = name
         self.hand = CardSet()
         self.bet = 0
