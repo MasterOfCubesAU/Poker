@@ -1,5 +1,7 @@
 from .CardSet import CardSet
-import config
+from ..utils.ConfigHandler import ConfigHandler
+
+ConfigHandler.load("config.yaml")
 
 
 class Player:
@@ -10,8 +12,9 @@ class Player:
         self.balance = balance
 
     def addbet(self, bet: int):
-        if (self.bet + bet) < config.minbet:
-            raise ValueError(f" Valule cannot be greater than {config.minbet}")
+        bigblind = ConfigHandler.get("bigblind")
+        if (self.bet + bet) < bigblind:
+            raise ValueError(f" Valule cannot be greater than {bigblind}")
         if bet > self.balance:
             raise ValueError(" Valule cannot be less than the Player balance")
         else:
