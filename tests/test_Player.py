@@ -3,6 +3,7 @@ from src.entities.CardSet import CardSet
 from src.entities.Card import Card
 import pytest
 
+
 def test_bet():
     cardSet = CardSet()
 
