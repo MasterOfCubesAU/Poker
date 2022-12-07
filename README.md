@@ -1,4 +1,4 @@
-# PyKer
+# PyKer - WIP
 Poker written in Python ( ͡° ͜ʖ ͡ – ✧)
 
 # Development
