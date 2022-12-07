@@ -7,7 +7,7 @@ ConfigHandler.load("config.yaml")
 class Player:
     def __init__(self, name: str, hand: CardSet, balance: int) -> None:
         self.name = name
-        self.hand = [].append(hand)
+        self.hand = CardSet()
         self.bet = 0
         self.balance = balance
 
