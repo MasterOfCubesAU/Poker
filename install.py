@@ -15,7 +15,7 @@ def getBinPath():
 
 def main():
     if args.reinstall or args.clean:
-        os.remove({VENV_PATH})
+        os.remove(VENV_PATH)
         print(f"Removed {VENV_PATH}")
         if args.clean:
             return
